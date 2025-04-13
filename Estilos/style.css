@@ -1,73 +1,348 @@
+/* Paleta de colores */
+:root {
+    --color-principal: #f87000; /* Naranja */
+    --color-secundario: #d95f00; /* Naranja oscuro */
+    --color-terciario: #b94e00; /* Naranja más oscuro */
+    --color-blanco: #ffffff;
+    --color-gris-claro: #f4f4f4;
+    --color-gris-oscuro: #333;
+    --color-texto-secundario: #666;
+    --color-verde: #28a745; /* Verde */
+    --color-verde-oscuro: #218838; /* Verde más oscuro */
+    --color-beige: #fdf5e6; /* Beige claro */
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --color-sombra-oscura: rgba(0, 0, 0, 0.2);
+}
+
+/* General */
 body {
     font: 1em Tahoma, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    padding: 20px; /* Agregar padding para separar el contenido de los bordes */
+    background-color: var(--color-gris-claro);
+    color: var(--color-gris-oscuro);
+    line-height: 1.6; /* Mejorar la legibilidad del texto */
 }
 
-header{
-    background: #f87000;
+/* Header */
+header {
+    background: linear-gradient(135deg, #f87000, #f95f00); /* Gradiente suave */
     color: #ffffff;
-    padding: 30px 0;
+    padding: 40px 0; /* Mayor padding para darle más espacio */
     text-align: center;
-    border-radius: 58%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: all 0.3s ease; /* Transición para el hover */
+}
+
+header:hover {
+    transform: translateY(-5px); /* Eleva el encabezado al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff; /* Color blanco para mejor contraste */
+    font-size: 2em; /* Mayor tamaño de fuente */
+    font-weight: bold;
+    letter-spacing: 1px; /* Espaciado entre letras para una apariencia más moderna */
 }
 
+/* Contenedor principal */
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+    width: 90%; /* Reducir el ancho para dar más espacio a los lados */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 20px; /* Agregar padding interno */
+    background: var(--color-blanco); /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px var(--color-sombra); /* Sombra suave */
 }
 
+/* Carta de productos */
 .product {
-    background: #fff;
+    background: var(--color-blanco);
     padding: 20px;
     margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--color-sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--color-sombra-oscura);
 }
 
 .product h2 {
-    margin: 0;
-    color: #333;
+    margin: 0 0 10px;
+    color: var(--color-gris-oscuro);
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .product p {
-    color: #666;
+    color: var(--color-texto-secundario);
+    margin: 5px 0;
+    font-size: 1em;
+    line-height: 1.5;
 }
 
-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-form input[type="text"],
-form input[type="tel"],
-form input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background: #28a745;
-    color: #fff;
+.product button {
+    background: var(--color-principal);
+    color: var(--color-blanco);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.product button:hover {
+    background: var(--color-secundario);
+    transform: scale(1.05);
+}
+
+.product button:active {
+    background: var(--color-terciario);
+    transform: scale(0.95);
+}
+
+/* Formulario */
+form {
+    background: var(--color-blanco);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--color-sombra);
+    margin-top: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+form h2 {
+    color: var(--color-principal);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-gris-oscuro);
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="tel"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--color-beige);
+    font-size: 16px;
+    color: var(--color-gris-oscuro);
+}
+
+form input[type="text"]:focus,
+form input[type="tel"]:focus,
+form select:focus {
+    border-color: var(--color-principal);
+    outline: none;
+    box-shadow: 0 0 5px rgba(248, 112, 0, 0.5);
+}
+
+form button {
+    background: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
 }
 
 form button:hover {
-    background: #218838;
+    background: var(--color-secundario);
+    transform: scale(1.05);
+}
+
+form button:active {
+    background: var(--color-terciario);
+    transform: scale(0.95);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--color-blanco);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px var(--color-sombra-oscura);
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-content button {
+    background: var(--color-verde);
+    color: var(--color-blanco);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.modal-content button:hover {
+    background: var(--color-verde-oscuro);
+}
+
+.modal-content button:active {
+    background: #1e7e34;
+}
+
+/* Carrito de compras */
+#cart-sidebar {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    width: 350px;
+    max-height: 80%; /* Ajusta la altura del carrito según los pedidos */
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px var(--color-sombra-oscura);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    font-family: 'Arial', sans-serif;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 2px solid var(--color-principal);
+}
+
+#cart-sidebar h2 {
+    color: var(--color-principal);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#cart-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-sidebar ul li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--color-gris-oscuro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+#cart-sidebar ul li div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+#cart-sidebar ul li input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--color-beige);
+    color: var(--color-gris-oscuro);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#cart-sidebar ul li input[type="number"]:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 5px rgba(248, 112, 0, 0.5);
+    outline: none;
+}
+
+#cart-sidebar ul li button {
+    background: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s ease;
+}
+
+#cart-sidebar ul li button:hover {
+    background: var(--color-secundario);
+}
+
+#cart-sidebar ul li button:last-child {
+    margin-left: auto;
+}
+
+#cart-sidebar #cart-total {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--color-gris-oscuro);
+}
+
+#cart-sidebar button {
+    background: var(--color-verde);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+#cart-sidebar button:hover {
+    background: var(--color-verde-oscuro);
 }
