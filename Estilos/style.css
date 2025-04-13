@@ -371,7 +371,6 @@ form button:active {
 #cart-sidebar button:hover {
     background: var(--color-verde-oscuro);
 }
-
 /* Estilo responsivo para el carrito */
 @media (max-width: 768px) {
     #cart-sidebar {
