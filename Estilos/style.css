@@ -371,6 +371,7 @@ form button:active {
 #cart-sidebar button:hover {
     background: var(--color-verde-oscuro);
 }
+
 /* Estilo responsivo para el carrito */
 @media (max-width: 768px) {
     #cart-sidebar {
@@ -383,4 +384,74 @@ form button:active {
     #cart-sidebar h2 {
         text-align: center; /* Centra el título del carrito */
     }
+}
+
+/* Estilo para el formulario de pedido */
+#order-form-section {
+    background: var(--color-blanco); /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px var(--color-sombra); /* Sombra suave */
+    margin-top: 20px; /* Separación superior */
+    max-width: 500px; /* Ancho máximo */
+    margin: 20px auto; /* Centrar el formulario */
+    font-family: 'Arial', sans-serif; /* Fuente profesional */
+}
+
+#order-form-section h2 {
+    color: var(--color-principal); /* Naranja principal */
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 1.5rem; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+}
+
+#order-form label {
+    display: block; /* Mostrar en bloque */
+    margin-bottom: 5px; /* Espaciado inferior */
+    color: var(--color-gris-oscuro); /* Texto oscuro */
+    font-weight: bold; /* Negrita */
+}
+
+#order-form input[type="text"],
+#order-form input[type="tel"],
+#order-form select {
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0 20px 0; /* Espaciado superior e inferior */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: var(--color-beige); /* Fondo beige claro */
+    font-size: 16px; /* Tamaño del texto */
+    color: var(--color-gris-oscuro); /* Texto oscuro */
+}
+
+#order-form input[type="text"]:focus,
+#order-form input[type="tel"]:focus,
+#order-form select:focus {
+    border-color: var(--color-principal); /* Borde naranja al enfocar */
+    outline: none; /* Eliminar el borde azul predeterminado */
+    box-shadow: 0 0 5px rgba(248, 112, 0, 0.5); /* Sombra naranja */
+}
+
+#order-form button {
+    background: var(--color-principal); /* Naranja principal */
+    color: var(--color-blanco); /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    font-size: 16px; /* Tamaño del texto */
+    transition: background 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    width: 100%; /* Botón ocupa todo el ancho */
+}
+
+#order-form button:hover {
+    background: var(--color-secundario); /* Naranja oscuro */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+#order-form button:active {
+    background: var(--color-terciario); /* Naranja más oscuro */
+    transform: scale(0.95); /* Efecto de reducción */
 }
