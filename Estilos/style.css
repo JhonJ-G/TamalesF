@@ -14,6 +14,23 @@
     --color-sombra-oscura: rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo para la imagen del header */
+header img {
+    width: 250px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    display: block; /* Asegura que la imagen sea un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    padding: 10px; /* Agrega un poco de espacio alrededor */
+}
+
+/* Estilo general para las imágenes */
+img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    display: block; /* Elimina el espacio extra debajo de las imágenes */
+    margin: 0 auto; /* Centra las imágenes horizontalmente */
+}
+
 /* General */
 body {
     font: 1em Tahoma, sans-serif;
@@ -27,8 +44,7 @@ body {
 /* Header */
 header {
     background: linear-gradient(135deg, #f87000, #f95f00); /* Gradiente suave */
-    color: #ffffff;
-    padding: 40px 0; /* Mayor padding para darle más espacio */
+    padding: 20px 0; /* Mayor padding para darle más espacio */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: all 0.3s ease; /* Transición para el hover */
@@ -41,7 +57,7 @@ header:hover {
 
 h1 {
     text-align: center;
-    color: #ffffff; /* Color blanco para mejor contraste */
+    color: #070707; /* Color blanco para mejor contraste */
     font-size: 2em; /* Mayor tamaño de fuente */
     font-weight: bold;
     letter-spacing: 1px; /* Espaciado entre letras para una apariencia más moderna */
@@ -106,6 +122,15 @@ h1 {
 .product button:active {
     background: var(--color-terciario);
     transform: scale(0.95);
+}
+
+/* Estilo específico para las imágenes de los productos */
+.product img {
+    max-width: 200px; /* Limita el ancho máximo de las imágenes de los productos */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; /* Bordes redondeados para un diseño más atractivo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 10px; /* Espaciado inferior */
 }
 
 /* Formulario */
@@ -345,4 +370,18 @@ form button:active {
 
 #cart-sidebar button:hover {
     background: var(--color-verde-oscuro);
+}
+
+/* Estilo responsivo para el carrito */
+@media (max-width: 768px) {
+    #cart-sidebar {
+        position: static; /* Cambia la posición a estática en pantallas pequeñas */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin-top: 20px; /* Añade un margen superior */
+        box-shadow: none; /* Elimina la sombra para un diseño más limpio */
+    }
+
+    #cart-sidebar h2 {
+        text-align: center; /* Centra el título del carrito */
+    }
 }
