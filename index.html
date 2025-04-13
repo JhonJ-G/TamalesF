@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamaleiros</title>
+    <link rel="stylesheet" href="Estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>TAMALES FRANCYS</h1>
+    </header>
+
+    <main>
+        <section id="product-list">
+            <h1>Selecciona tus Tamales</h1>
+            <div class="product">
+                <h2>Tamal de Arroz Con Cerdo</h2>
+                <p>Descripción: Tamal de arroz con cerdo, delicioso y jugoso.</p>
+                <p>Precio: $10,000</p>
+                <button onclick="addToCart('Tamal de Arroz Con Cerdo', 10000)">Agregar al carrito</button>
+            </div>
+            <!-- Puedes agregar más productos dinámicamente desde JavaScript -->
+        </section>
+
+        <section id="order-form-section">
+            <h2>Formulario de Pedido</h2>
+            <form id="order-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone" name="phone" required>
+                
+                <button type="button" onclick="submitOrder()">Enviar Pedido</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="./Script/script.js"></script>
+</body>
+</html>
